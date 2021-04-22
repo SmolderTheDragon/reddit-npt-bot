@@ -1,4 +1,5 @@
 import praw
+from random import randrange
 
 # configure praw
 # authentication details are in a separate praw.ini file
@@ -18,13 +19,21 @@ with open('prev_thread.txt') as p:
 for flair_template in subreddit.flair.link_templates:
 	if 'Discussion' in flair_template['text']:
 		discussion_flair_id = flair_template['id']
+		break
+
+def generate_random_emote():
+	alphastring = 'abcdefgh'
+	table = alphastring[randrange(len(alphastring))]
+	column = str(randrange(4))
+	row = str(randrange(10))
+	return '[](/{0}{1}{2})'.format(table, column, row)
 
 def submit_new_NPT_post():
 	# title of the NPT post
 	title = 'Pony stuff you want to talk about but isn’t worthy of a dedicated thread! #{0}'.format(num)
 
 	# text of the NPT post
-	text = "[Previous thread]({0})\n\n[](/cadancesmile)This is the thread for any pony-related topics, thoughts, and questions you can think of that are too small to deserve their own thread. That's all you need know.".format(prev_thread)
+	text = "[Previous thread]({0})\n\n{1}This is the thread for any pony-related topics, thoughts, and questions you can think of that are too small to deserve their own thread. That's all you need know.".format(prev_thread, generate_random_emote())
 
 	# submit the thread
 	submission = subreddit.submit(title=title, selftext=text, flair_id=discussion_flair_id)
