@@ -15,7 +15,7 @@ except Exception:
 	raise
 
 def generate_random_emote():
-	alphastring = 'abcdefgh'
+	alphastring = 'abcefgh'
 	table = alphastring[randrange(len(alphastring))]
 	column = str(randrange(4))
 	row = str(randrange(10))
