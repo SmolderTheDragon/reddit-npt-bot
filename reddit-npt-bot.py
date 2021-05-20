@@ -1,6 +1,7 @@
 import praw
 from random import randrange
 import logging
+import json
 
 # initialize logger
 logging.basicConfig(filename='status.log', level=logging.DEBUG)
@@ -9,17 +10,25 @@ logging.basicConfig(filename='status.log', level=logging.DEBUG)
 try:
 	reddit =  praw.Reddit('bot1')
 	reddit.validate_on_submit = True
-	subreddit = reddit.subreddit("NPTtest")  # /r/NPTtest is a subreddit I made to test this bot
+	subreddit = reddit.subreddit("mylittlepony")  # /r/NPTtest is a subreddit I made to test this bot; use "NPTtest" when testing
 except Exception:
 	logging.exception('An error occurred when attempting to configure praw')
 	raise
 
 def generate_random_emote():
+	# Currently unused; backup in case quotes don't work
 	alphastring = 'abcefgh'
 	table = alphastring[randrange(len(alphastring))]
 	column = str(randrange(4))
 	row = str(randrange(10))
 	return '[](/{0}{1}{2})'.format(table, column, row)
+
+def generate_quote(n):
+	with open('quotes.json') as q:
+		quotes = json.load(q)
+	len_quotes = len(quotes['Quotes'])
+	quote = quotes['Quotes'][n % len_quotes]
+	return '[](/{0}) {1} —*{2}*'.format(quote['Emote'], quote['Quote'], quote['Character'])
 
 def submit_new_NPT_post():
 	# grabbing which number NPT thread we are on from the disk
@@ -44,7 +53,9 @@ def submit_new_NPT_post():
 	title = 'Pony stuff you want to talk about but isn’t worthy of a dedicated thread! #{0}'.format(num)
 
 	# text of the NPT post
-	text = "[Previous thread]({0})\n\n{1}This is the thread for any pony-related topics, thoughts, and questions you can think of that are too small to deserve their own thread. That's all you need know.".format(prev_thread, generate_random_emote())
+	text = "[Previous thread]({0})\n\n-----\n\n".format(prev_thread)
+	text += "{0} [](/sp)\n\n-----\n\n".format(generate_quote(int(num)))
+	text += "This is the thread for any pony-related topics, thoughts, and questions you can think of that are too small to deserve their own thread. That's all you need know."
 	text += "\n\n*This post was submitted automatically. [Source code](https://github.com/SmolderTheDragon/reddit-npt-bot).*"
 
 	# submit the thread

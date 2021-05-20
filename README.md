@@ -6,7 +6,7 @@ In general, most posts on /r/mylittlepony tend to be images of fan art. On Thurs
 
 ## Technical implementation
 
-The code that interacts with the Reddit API to submit the post lives in `reddit-npt-bot.py`. The script reads which number thread we are on from the `num.txt` file on the disk (e.g. if we are on the 153rd iteration of the thread, then `num.txt` should just contain `153`), as well as the url of the previous thread from the `prev_thread.txt` url on the disk. It also generates a random emote to include in the text post which it then submits. I created a subreddit at [/r/NPTtest](https://www.reddit.com/r/NPTtest/) in order to test this script.
+The code that interacts with the Reddit API to submit the post lives in `reddit-npt-bot.py`. The script reads which number thread we are on from the `num.txt` file on the disk (e.g. if we are on the 153rd iteration of the thread, then `num.txt` should just contain `153`), as well as the url of the previous thread from the `prev_thread.txt` url on the disk. It also reads `quotes.json`, from which it pulls a quote from the show to include in the text post which it then submits. I created a subreddit at [/r/NPTtest](https://www.reddit.com/r/NPTtest/) in order to test this script.
 
 All the Python script does is submit the post to Reddit. The actual scheduling of the post should be done on the server side via `cron` on either Linux or Mac. The crontab should look something like this:
 
