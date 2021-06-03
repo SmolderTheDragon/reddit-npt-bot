@@ -56,7 +56,7 @@ def submit_new_NPT_post():
 	text = "[Previous thread]({0})\n\n-----\n\n".format(prev_thread)
 	text += "{0} [](/sp)\n\n-----\n\n".format(generate_quote(int(num)))
 	text += "This is the thread for any pony-related topics, thoughts, and questions you can think of that are too small to deserve their own thread. That's all you need know."
-	text += "\n\n*This post was submitted automatically. [Source code](https://github.com/SmolderTheDragon/reddit-npt-bot).*"
+	text += "\n\n*This post was submitted automatically. [Source code](https://github.com/SmolderTheDragon/reddit-npt-bot). [Suggest a quote](https://docs.google.com/forms/d/e/1FAIpQLSft9KjakzHYjtBONXFw1AedOrgyZ-ltAXRkpN5lIjNOM3fs9w/viewform?usp=sf_link)*."
 
 	# submit the thread
 	submission = subreddit.submit(title=title, selftext=text, flair_id=discussion_flair_id)
