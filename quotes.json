@@ -91,15 +91,16 @@
             "id": "15"
         },
         {
-            "Quote": "\"A true princess in any world leads not by forcing others to bow before her, but by inspiring others to stand with her.\"",
-            "Emote": "celestia",
-            "Character": "Celestia",
+            "Quote": "\"There ain't no call to worry, / So don't you cry or fret. / A cutie mark won't change you, / No matter what you get.\"",
+            "Emote": "ajhappy",
+            "Character": "Applejack",
+            "Suggester": "an anonymous redditor",
             "id": "16"
         },
         {
-            "Quote": "\"We're kinda short, but so what? We don't get defeated. / We could take a little break, but we don't need it.\"",
-            "Emote": "scootacheer",
-            "Character": "Scootaloo",
+            "Quote": "\"A true princess in any world leads not by forcing others to bow before her, but by inspiring others to stand with her.\"",
+            "Emote": "celestia",
+            "Character": "Celestia",
             "id": "17"
         },
         {

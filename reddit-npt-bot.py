@@ -28,7 +28,10 @@ def generate_quote(n):
 		quotes = json.load(q)
 	len_quotes = len(quotes['Quotes'])
 	quote = quotes['Quotes'][n % len_quotes]
-	return '[](/{0}) {1} —*{2}*'.format(quote['Emote'], quote['Quote'], quote['Character'])
+	if 'Suggester' in quote:
+		return '[](/{0}) {1} —*{2}*  \n^(This quote was suggested by {3}.)'.format(quote['Emote'], quote['Quote'], quote['Character'], quote['Suggester'])
+	else:
+		return '[](/{0}) {1} —*{2}*'.format(quote['Emote'], quote['Quote'], quote['Character'])
 
 def submit_new_NPT_post():
 	# grabbing which number NPT thread we are on from the disk
@@ -56,7 +59,7 @@ def submit_new_NPT_post():
 	text = "[Previous thread]({0})\n\n-----\n\n".format(prev_thread)
 	text += "{0} [](/sp)\n\n-----\n\n".format(generate_quote(int(num)))
 	text += "This is the thread for any pony-related topics, thoughts, and questions you can think of that are too small to deserve their own thread. That's all you need know."
-	text += "\n\n*This post was submitted automatically. [Source code](https://github.com/SmolderTheDragon/reddit-npt-bot). [Suggest a quote](https://docs.google.com/forms/d/e/1FAIpQLSft9KjakzHYjtBONXFw1AedOrgyZ-ltAXRkpN5lIjNOM3fs9w/viewform?usp=sf_link)*."
+	text += "\n\n^(This post was submitted automatically. [Source code](https://github.com/SmolderTheDragon/reddit-npt-bot). [Suggest a quote](https://docs.google.com/forms/d/e/1FAIpQLSft9KjakzHYjtBONXFw1AedOrgyZ-ltAXRkpN5lIjNOM3fs9w/viewform?usp=sf_link).)"
 
 	# submit the thread
 	submission = subreddit.submit(title=title, selftext=text, flair_id=discussion_flair_id)
