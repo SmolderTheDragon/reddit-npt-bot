@@ -29,7 +29,7 @@ def generate_quote(n):
 	len_quotes = len(quotes['Quotes'])
 	quote = quotes['Quotes'][n % len_quotes]
 	if 'Suggester' in quote:
-		return '[](/{0}) {1} —*{2}*  \n^(This quote was suggested by {3}.)'.format(quote['Emote'], quote['Quote'], quote['Character'], quote['Suggester'])
+		return '[](/{0}) {1} —*{2}*\n\n^(This quote was suggested by {3}.)'.format(quote['Emote'], quote['Quote'], quote['Character'], quote['Suggester'])
 	else:
 		return '[](/{0}) {1} —*{2}*'.format(quote['Emote'], quote['Quote'], quote['Character'])
 

@@ -122,9 +122,10 @@
             "id": "20"
         },
         {
-            "Quote": "\"Lookin' good up there, Princess Twilight!\"",
-            "Emote": "ajhappy",
-            "Character": "Applejack",
+            "Quote": "\"Are... you... KIDDING ME???\"",
+            "Emote": "cozyglow",
+            "Character": "Cozy Glow",
+            "Suggester": "/u/Casketbase77",
             "id": "21"
         },
         {
