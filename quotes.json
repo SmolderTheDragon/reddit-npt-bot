@@ -129,9 +129,10 @@
             "id": "21"
         },
         {
-            "Quote": "\"**Rainbow Dash:** Don't do it, Twilight!  \\n**Fluttershy:** We aren't worth it  \\n**Discord:** Oh, but *you* are, Fluttershy. You are the pony who taught me that friendship is magic. I had magic and friendship. And now, I don't have either.",
-            "Emote": "discordsad",
-            "Character": "Discord",
+            "Quote": "\"The Great and Powerful Trixie might keep her promises, but the Busy and Distracted Starlight sure doesn't.\"",
+            "Emote": "sgconcern",
+            "Character": "Starlight Glimmer",
+            "Suggester": "an anonymous redditor",
             "id": "22"
         },
         {
