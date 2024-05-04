@@ -19,7 +19,7 @@
             "id": "3"
         },
         {
-            "Quote": "**Twilight Sparkle:** I wasn't a natural at friendship. But with some practice and help from my friends, I got better, and now I'm the Princess of Friendship!  \\n**Sky Stinger:** So you're saying I can be the... Princess of Flying?",
+            "Quote": "**Twilight Sparkle:** I wasn't a natural at friendship. But with some practice and help from my friends, I got better, and now I'm the Princess of Friendship!  \n**Sky Stinger:** So you're saying I can be the... Princess of Flying?",
             "Emote": "twiright",
             "Character": "Sky Stinger",
             "id": "4"
@@ -34,6 +34,7 @@
             "Quote": "\"Don't you use your fancy mathematics to muddy the issue! I said I could handle this harvest and I'm gonna prove it to you.\"",
             "Emote": "ajsup",
             "Character": "Applejack",
+            "Suggester": "/u/dumbass_spaceman",
             "id": "6"
         },
         {
@@ -148,7 +149,7 @@
             "id": "24"
         },
         {
-            "Quote": "**Discord:** You're supposed to say, \"Who's there?\" It's the most basic of jokes!  \\n**Maud:** *You're* the most basic of jokes.",
+            "Quote": "**Discord:** You're supposed to say, \"Who's there?\" It's the most basic of jokes!  \n**Maud:** *You're* the most basic of jokes.",
             "Emote": "maud",
             "Character": "Maud",
             "id": "25"
@@ -292,9 +293,10 @@
             "id": "48"
         },
         {
-            "Quote": "\"I LIKE CUTE SILLY STUFF!\"",
-            "Emote": "smolderrage",
-            "Character": "Smolder",
+            "Quote": "**Sunset Shimmer:** Sorry. I'm just used to hearing you say, \"No student parking in the faculty lot!\" Heh heh.  \n**Princess Luna:** This \"faculty lot\" you speak of sounds like a place of great power.",
+            "Emote": "sunsetshimmer",
+            "Character": "Sunset Shimmer",
+            "Suggester": "/u/NightFlame389",
             "id": "49"
         },
         {
