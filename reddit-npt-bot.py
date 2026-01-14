@@ -1,10 +1,28 @@
 import praw
 from random import randrange
 import logging
+import logging.handlers
 import json
+import os
 
 # initialize logger
-logging.basicConfig(filename='status.log', level=logging.DEBUG)
+log_directory = os.path.expanduser('~/reddit-npt-bot-logs')
+os.makedirs(log_directory, exist_ok=True)
+log_filepath = os.path.join(log_directory, 'reddit-npt-bot.log')
+
+logger = logging.getLogger()
+logger.setLevel(logging.DEBUG)
+
+# create a rotating file handler
+handler = logging.handlers.RotatingFileHandler(
+    log_filepath, maxBytes=1024*1024, backupCount=5)
+
+# create a logging format
+formatter = logging.Formatter('%(asctime)s - %(name)s - %(levelname)s - %(message)s')
+handler.setFormatter(formatter)
+
+# add the handlers to the logger
+logger.addHandler(handler)
 
 # configure praw; authentication details are in a separate praw.ini file
 try:
